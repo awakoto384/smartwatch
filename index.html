@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>smartwatch</title>
+        <style>
+            body{
+                margin: 0; 
+                padding: 0;
+            }
+
+            header {
+                background-color: #242d4c;
+                color: #fff;
+                height: 68px;
+                text-align: center;
+            }
+
+            .logo {position: relative; height: 35px; padding: 15px; padding-top: 20px;}
+
+            .contents {
+              white-space: nowrap;
+              padding: 50px;
+              display: flex;
+              justify-content: center;
+            }
+          
+            .productInfo {
+              display: inline-block;
+              width: 500px;
+              height: 500px;
+              margin-right: 10px;
+              background-color: #fff;
+            }
+            .watch{
+                position: relative;
+                text-align: center;
+                position: relative; 
+                float: right;
+            }
+
+            #watchband{
+                position: relative; 
+                height: 400px;
+                padding-top: 20px;
+            }
+
+            #watchContent {
+                position: absolute;
+                bottom: 30%;
+                left: 49%;
+                transform: translate(-50%, -50%);
+            }
+
+            #watchtext{
+                color: white;
+            }
+
+            .hearttext{
+                color: white;
+                margin-top: 0px;
+            }
+
+            .heartImg {
+                height: 65px; 
+            }
+            
+            #description{
+                word-wrap: break-word;
+                white-space:pre-wrap;
+            }
+
+            .box {
+            height: 35px;
+            width: 60px;
+            margin-bottom: 15px;
+            display: inline-block;
+            margin-right: 6px;
+            border-radius: 4px;
+            }
+
+            #black {
+            background-color: #23211f;
+            }
+            #red {
+            background-color: #ca3d22;
+            }
+            #blue {
+            background-color: #565681;
+            }
+            #purple {
+            background-color: #8a5362;
+            }
+            #pink {
+            background-color: #e9c7be;
+            }
+
+            .style-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            /* Button */
+            .feature-button {
+                display: inline-block;
+                background-color: #f1f1f1;
+                color: #333;
+                padding: 8px 16px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 14px;
+                border-radius: 4px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            /* Button hover state */
+            .feature-button:hover {
+                background-color: #ddd;
+            }
+
+            .active {
+                background-color: #5f5f5f;
+                color: white;
+            }
+
+            .buy-now {
+                display: inline-block;
+                background-color: #1d1d1d;
+                color: white;
+                padding: 12px 24px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                border-radius: 10px;
+                border: none;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
+                
+            /* Add to Cart button hover state */
+            .buy-now:hover {
+                background-color: #5f5f5f;
+            }
+          </style>
+    </head>
+    <body>
+        <header>
+            <img src="/images/amazonLogo.png" class="logo"></img>
+        </header>
+        <main>
+            <div class="contents">
+
+                <div class="productInfo">
+                    <div class="watch">
+                        <img id="watchband" src="/images/black.png" alt="Black Watch"></img>
+                        <div id="watchContent">
+                            <h1 id="watchtext">00:00:00<h1>
+                            <script>
+                                var date = new Date();
+                                var current_time = (date.getHours()<10?'0':'') + date.getHours()+":"+ (date.getMinutes()<10?'0':'') + date.getMinutes()+":"+ (date.getSeconds()<10?'0':'') + date.getSeconds();
+                                document.getElementById("watchtext").innerHTML = current_time;
+                            </script>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="productInfo">
+                    <h1>FitBit 19 - The Smartest Watch</h1>
+                    <p id="description">To build the ultimate sports watch, we crafted every element with painstaking attention to detail for unparalleled performance. Titanium strikes the perfect balance between weight, ruggedness, and corrosion resistance. The case rises up to surround the flat sapphire crystal and protect it from edge impacts. The Digital Crown is larger and the side button is raised from the case, making them easier to use while you’re wearing gloves.</p>
+                    <h3>Select Color</h3>
+                    <div>
+                        <div class='box' id="black"></div>
+                        <div class='box' id="red"></div>
+                        <div class='box' id="blue"></div>
+                        <div class='box' id="purple"></div>
+                        <div class='box' id="pink"></div>
+                    </div>
+                    <h3>Features</h3>
+                    <div class="style-buttons">
+                        <div class='feature-button active' id="time">Time</div>
+                        <div class='feature-button' id="heart">Heart Rate</div>
+                    </div>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+                <script type="text/javascript" src="/color.js"></script>
+            </div>
+        </main>
+    </body>
+</html>
